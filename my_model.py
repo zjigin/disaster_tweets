@@ -270,7 +270,7 @@ def train_bert(epochs, init_lr, use_lstm=False, load_ckpt=False):
     if use_lstm:
         model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
             filepath=checkpoint_filepath + '_lstm',
-            save_weights_only=False,
+            save_weights_only=True,
             monitor='val_binary_accuracy',
             mode='max',
             save_best_only=True,
