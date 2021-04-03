@@ -240,7 +240,7 @@ def build_classifier_model(use_lstm=False):
     else:
         net = outputs['sequence_output']
         net = tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(2048), name="bilstm")(net)
-    net = tf.keras.layers.Dense(128, activation='relu', name="relu")(net)
+    # net = tf.keras.layers.Dense(128, activation='relu', name="relu")(net)
     net = tf.keras.layers.Dropout(0.1)(net)
     net = tf.keras.layers.Dense(1, activation=None, name='classifier')(net)
     return tf.keras.Model(text_input, net)
