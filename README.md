@@ -1,4 +1,3 @@
-./
 ├── ckpt
 ├── ckpt_lstm
 ├── cleaned_data
